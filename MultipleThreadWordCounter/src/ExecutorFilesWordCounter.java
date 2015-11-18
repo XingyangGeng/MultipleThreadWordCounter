@@ -20,8 +20,7 @@ public class ExecutorFilesWordCounter extends AbstractConcurrencyFactorProvider
 	@Override
 	public void count(Map<String, String> files, String word, Callback callback) {
 		// TODO - implement this class using calls to an ExecutorService; with
-		// one call per {@linkplain concurrencyFactor}.
-		// HINT - do not create the ExecutorService object in this method
+
 		String[] fileNames = files.keySet().toArray(new String[files.size()]);
 		AtomicInteger filenum = new AtomicInteger(-1);
 		int concurrencyFactor = this.getConcurrencyFactor();
@@ -50,9 +49,7 @@ public class ExecutorFilesWordCounter extends AbstractConcurrencyFactorProvider
 
 												@Override
 												public void counted(long count) {
-													// TODO Auto-generated
-													// method
-													// stub
+
 													latch.countDown();
 												}
 											});
