@@ -67,9 +67,7 @@ public class ThreadedWordCounter extends AbstractConcurrencyFactorProvider
 	public void count(String fileContents, String word, Callback callback) {
 		// TODO - implement this class using Thread objects; one Thread per
 		// {@link #concurrencyFactor}
-		// HINT - break up {@linkplain fileContents} and distribute the work
-		// across the threads
-		// HINT - do not create the Thread objects in this method
+	
 		setContent(fileContents.split("\n"));
 		setWord(word);
 		setCallback(callback);
