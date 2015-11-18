@@ -61,10 +61,7 @@ public class ThreadedFilesWordCounter extends AbstractConcurrencyFactorProvider
 
 											@Override
 											public void counted(long count) {
-												// TODO Auto-generated
-												// method
-												// stub
-												// System.out.println();
+								
 												latch.countDown();
 											}
 										});
@@ -91,17 +88,13 @@ public class ThreadedFilesWordCounter extends AbstractConcurrencyFactorProvider
 			Thread t = new Thread(runnable);
 			threadList.add(t);
 		}
-		// for(Thread thread:threadList){
-		// thread = new Thread();
-		// }
+	
 	}
 
 	@Override
 	public void count(Map<String, String> files, String word, Callback callback) {
 		// TODO - implement this class using Thread objects; one Thread per
-		// {@link #concurrencyFactor} with each Thread handling at most one file
-		// at one time
-		// HINT - do not create the ExecutorService object in this method
+		
 		setFiles(files);
 		setFileNames(files.keySet().toArray(new String[files.size()]));
 		setCallback(callback);
