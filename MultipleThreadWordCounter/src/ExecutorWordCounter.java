@@ -27,9 +27,7 @@ public class ExecutorWordCounter extends AbstractConcurrencyFactorProvider
 	public void count(String fileContents, String word, Callback callback) {
 		// TODO - implement this class using calls to an ExecutorService; one
 		// call per {@link #concurrencyFactor}
-		// HINT - break up {@linkplain fileContents} and distribute the work
-		// across the calls
-		// HINT - do not create the ExecutorService object in this method
+
 		final String[] content = fileContents.split("\n");
 		AtomicInteger line = new AtomicInteger(-1);
 		for (int i = 0; i < this.getConcurrencyFactor(); ++i) {
