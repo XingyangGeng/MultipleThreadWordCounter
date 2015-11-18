@@ -92,8 +92,7 @@ public class Counter {
 				latch.countDown();
 			}
 		});
-		// TODO - fix me - need to ensure that this method doesn't return until
-		// all files have had all words counted
+		
 		try {
 			latch.await();
 		} catch (InterruptedException e) {
